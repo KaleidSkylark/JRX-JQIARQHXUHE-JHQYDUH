@@ -1,4 +1,4 @@
-# 🛡️ TBH: TaskBarHero Trainer
+# 🛡️ TBH: TaskBarHero Trainer V1.00.09
 
 A unknowncheats community trainer for **TaskBarHero**.
 
