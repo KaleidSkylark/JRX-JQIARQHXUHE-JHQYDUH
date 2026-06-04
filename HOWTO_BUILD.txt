@@ -1,0 +1,92 @@
+================================================================
+  TBH Trainer v1.2.0  -  Source Code
+  Author: DENOISER (CTF community)
+  Target game: Taskbar Hero 1.00.08 (Unity Il2Cpp)
+================================================================
+
+This archive contains the full source for the trainer plus the
+prebuilt TBHHook.dll (the injected speedhook). You can rebuild the
+DLL from source too if you prefer - instructions below.
+
+
+REPO LAYOUT
+-----------
+  TBH_Trainer\           - C# WinForms trainer (.NET 10)
+    *.cs                 - all sources
+    TBH_Trainer.csproj   - project file (TargetFramework: net10.0-windows)
+    app.manifest         - requires Administrator
+    logo.png / icon.ico  - embedded resources
+    build.bat            - .NET building script
+
+  TBHHook\               - C++ injected DLL (Unity Time::set_timeScale)
+    dllmain.cpp          - source
+    build.bat            - one-step MSVC build
+
+REQUIREMENTS TO BUILD
+---------------------
+  - .NET 10 SDK (https://dotnet.microsoft.com/download/dotnet/10.0)
+  - Visual Studio 2022 or newer with the "Desktop development with C++" workload
+    (only needed if you also rebuild TBHHook.dll)
+
+BUILD - RELEASE (SELF-CONTAINED, ONE EXE)
+-----------------------------------------
+Simply run build.bat in the root folder.
+
+For specific component build run the build.bat in that specific component folder.
+
+WHAT THE TRAINER DOES (HIGH LEVEL)
+----------------------------------
+Two-tab WinForms UI:
+
+  Tab "ACTk bypass" (runtime, game must be running):
+    - Connect to TaskbarHero.exe.
+    - Disable ACTk: writes RET at the entry of every Anti-Cheat Toolkit
+      detector (ObscuredCheatingDetector, InjectionDetector,
+      SpeedHackDetector). Every write is byte-signature-verified
+      against the 1.00.08 prologue, so a wrong version is REFUSED.
+    - Speedhack: injects TBHHook.dll via CreateRemoteThread +
+      LoadLibraryW, then talks to it via a TBHTrainerShared memory
+      mapping. The DLL calls UnityEngine.Time::set_timeScale through
+      il2cpp_runtime_invoke.
+    - Hero EXP on Kill: AOB-scans GameAssembly.dll for the unique
+      pattern F3 0F 10 8E A8 03 00 00 (movss xmm1, [rsi+0x3A8]),
+      allocates an RWX code cave within +/-1 GB of the site, and
+      patches the site with a JMP through the cave that writes the
+      chosen EXP value into [rsi+0x3A8] before executing the original
+      instruction. Disable restores the original 8 bytes and frees
+      the cave. (Ported from BabyGroot's Cheat Engine script.)
+    - Hero Stats (HP / ATK): WORKING on 1.00.08. HeroStats.cs uses a
+      static-base pointer chain (bases updated for 1.00.08; the chains
+      themselves are unchanged from 1.00.07). Edits the lead/active
+      hero of the 3-hero party; full party-array support is planned.
+
+  Tab "Extra Features" (static patches, game must be CLOSED):
+    - Auto-detects GameAssembly.dll in the default Steam install.
+    - Five toggles, each one byte-signature-verified before any disk
+      write, with a one-time .denoiser.bak backup so Restore Backup
+      always reverts to vanilla:
+        1. Unlimited Gold       (forces gold reward to 1,000,000,000)
+        2. Crash Protection     (skips a run-once init that crashes
+                                 alongside Unlimited Gold)
+        3. Cube XP (Synthesis)  (cmp edx,0x0B; jackpot 1B XP on cube 11,
+                                 1000 XP on the rest — do a synthesis
+                                 in-game to collect)
+        4. DLC Unlocker
+        5. Unlock All Pets
+
+
+SAFETY NOTES
+------------
+  - Every memory write and every disk write is guarded by a
+    byte-signature check. A wrong version refuses, never corrupts.
+  - High EXP and ACTk patches are restored on Disable and on app
+    close. Extra Features are reverted by Restore Backup.
+  - Offline / single-player use only.
+
+CREDITS
+-------
+  - JamalGames     -  Game / ACTk dumps
+  - KusursuzHacker -  Forum offsets that became the Extra Features
+  - BabyGroot      -  CE script that became the High EXP feature
+
+Made by DENOISER for the CTF community.
