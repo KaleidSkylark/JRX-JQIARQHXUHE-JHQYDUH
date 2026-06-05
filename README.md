@@ -27,9 +27,6 @@ This version includes manual backup management and robust DLL recovery:
 
 This version replaces the dynamic preset with a robust static DLL patch for the Cube:
 
-### 🎒 Stash Spawner Removal
-* **Removed Stash Spawner**: Completely removed the non-functional stash spawner UI controls, scanning, item database spawning, and export catalog handlers from the interface and code. The main panel is now much cleaner and less cramped.
-
 ### ⚙️ Static DLL Patches
 * **Cube XP (Synthesis)**: Added a new static patch under the "Static DLL Patches" tab: `Cube XP (Synthesis)`. When applied to `GameAssembly.dll` (with the game closed), performing a synthesis returns **100,000,000,000 EXP** for the Cube, leveling it up instantly.
 
