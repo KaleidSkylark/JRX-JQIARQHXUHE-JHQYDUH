@@ -1,4 +1,4 @@
-# 🛡️ TBH: TaskBarHero Trainer v1.3.5 (1.00.09)
+# 🛡️ TBH: TaskBarHero Trainer
 
 A unknowncheats community trainer for **TaskBarHero** with full Multi-Instance Support.
 
@@ -57,4 +57,4 @@ This version includes key improvements, new features, and settings separation fi
 4. Play responsibly!
 
 ---
-<p align="center">Made with 💻AI and a UC prayer.</p>
+<p align="center">Made with 💻AI and a prayer.</p>
