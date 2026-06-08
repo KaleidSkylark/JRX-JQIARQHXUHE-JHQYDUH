@@ -1,0 +1,602 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CheatTable CheatEngineTableVersion="46">
+  <CheatEntries>
+    <CheatEntry>
+      <ID>1</ID>
+      <Description>"Attach Game"</Description>
+      <Options moHideChildren="1"/>
+      <VariableType>Auto Assembler Script</VariableType>
+      <AssemblerScript Async="1">{  Game Executable   : TaskBarHero.exe
+   Script Date       : 2026-06-06
+   Author            : Jonxpin
+}
+ 
+{$lua}
+if syntaxcheck then return end
+[ENABLE]
+if getProcessIDFromProcessName("TaskBarHero.exe") ~= nil then 
+openProcess("TaskBarHero.exe")
+mono_initialize()
+LaunchMonoDataCollector()
+else 
+showMessage("TaskBarHero.exe not found.") 
+disableCheat() 
+end
+[DISABLE]
+</AssemblerScript>
+      <CheatEntries>
+        <CheatEntry>
+          <ID>30</ID>
+          <Description>"TBH: Task Bar Hero v1.00.11"</Description>
+          <Options moHideChildren="1" moDeactivateChildrenAsWell="1"/>
+          <VariableType>Auto Assembler Script</VariableType>
+          <AssemblerScript>{  Game Executable   : TaskBarHero.exe
+   Script Date       : 2026-06-06
+   Author            : Jonxpin
+}
+ 
+{$lua}
+if syntaxcheck then return end
+local function compactMode()
+    if MainForm then
+        MainForm.Splitter1.Visible = false
+        MainForm.Panel5.Visible    = false
+    end
+end
+local function normalMode()
+    if MainForm then
+        MainForm.Splitter1.Visible = true
+        MainForm.Panel5.Visible    = true
+    end
+end
+ 
+[ENABLE]
+local aobPattern = "488B05????????83B8E40000000075??488BC8E8????????488B05????????488B80B8000000488B48204885C974??488B15????????E8"
+local moduleName = "TaskBarHero.exe"
+function findPstat()
+    local moduleBase = getAddress(moduleName)
+    if not moduleBase then
+        print("Error: " .. moduleName .. " not found!")
+        return nil
+    end
+    local moduleSize = getModuleSize(moduleName)
+    local results = AOBScan(aobPattern, "+X-C-W", 0, moduleBase, moduleBase + moduleSize)
+    if not results or results.Count == 0 then
+        print("Error: AOB pattern not found!")
+        return nil
+    end
+    local matchAddress = getAddress(results[0])
+    results.destroy()
+    local relativeOffset = readInteger(matchAddress + 3)
+    local PstatAddress = matchAddress + 7 + relativeOffset
+    return PstatAddress
+end
+local PstatBase = findPstat()
+if not PstatBase then
+    print("Failed to find Pstat address!")
+    return
+end
+unregisterSymbol("Pstat")
+registerSymbol("Pstat", PstatBase, true)
+ 
+local fontName = "Consolas"
+local fontSize = 10
+local fontColor = 0xFFFFFF
+ 
+if _G.MyCustomHeader == nil then
+    local main = getMainForm()
+ 
+    local p = createPanel(main)
+    p.Name = "MyCustomHeaderPanel"
+    p.Align = "alTop"
+    p.Height = 20
+    p.Color = 0x000000
+ 
+    local lbl = createLabel(p)
+    lbl.Caption = "TBH: Task Bar Hero Table - Created By Jonxpin"
+    lbl.Font.Name = fontName
+    lbl.Font.Size = fontSize
+    lbl.Font.Color = fontColor
+    lbl.Font.Style = "fsBold"
+    lbl.Transparent = true
+    lbl.AutoSize = true
+ 
+    local function centerLabel()
+      lbl.Left = (p.Width - lbl.Width) // 2
+      lbl.Top = (p.Height - lbl.Height) // 2
+    end
+ 
+    centerLabel()
+    p.OnResize = centerLabel
+    _G.MyCustomHeader = {
+      panel = p,
+      label = lbl
+    }
+end
+synchronize(compactMode)
+[DISABLE]
+synchronize(normalMode)
+unregisterSymbol("Pstat")
+if _G.MyCustomHeader ~= nil then
+    _G.MyCustomHeader.panel.destroy()
+    _G.MyCustomHeader = nil
+end
+ 
+</AssemblerScript>
+          <CheatEntries>
+            <CheatEntry>
+              <ID>1337094847</ID>
+              <Description>"ACTk Bypass"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{  Game Executable   : TaskBarHero.exe
+   Script Date       : 2026-06-07
+   Author            : Jonxpin
+}
+ 
+[ENABLE]
+CodeStage.AntiCheat.Detectors.ObscuredCheatingDetector.xvv:
+db C3
+CodeStage.AntiCheat.Detectors.ObscuredCheatingDetector.xvw:
+db C3
+CodeStage.AntiCheat.Detectors.ObscuredCheatingDetector.xvx:
+db C3
+CodeStage.AntiCheat.Detectors.InjectionDetector.xva:
+db C3
+CodeStage.AntiCheat.Detectors.SpeedHackDetector.Update:
+db C3
+CodeStage.AntiCheat.Detectors.SpeedHackDetector.OnApplicationPause:
+db C3
+CodeStage.AntiCheat.Detectors.TimeCheatingDetector.xuw:
+db C3
+CodeStage.AntiCheat.Detectors.TimeCheatingDetector.xux:
+db C3
+CodeStage.AntiCheat.Detectors.WallHackDetector.Update:
+db C3
+ 
+[DISABLE]
+CodeStage.AntiCheat.Detectors.ObscuredCheatingDetector.xvv:
+db 41
+CodeStage.AntiCheat.Detectors.ObscuredCheatingDetector.xvw:
+db 48
+CodeStage.AntiCheat.Detectors.ObscuredCheatingDetector.xvx:
+db 48
+CodeStage.AntiCheat.Detectors.InjectionDetector.xva:
+db 40
+CodeStage.AntiCheat.Detectors.SpeedHackDetector.Update:
+db 40
+CodeStage.AntiCheat.Detectors.SpeedHackDetector.OnApplicationPause:
+db 48
+CodeStage.AntiCheat.Detectors.TimeCheatingDetector.xuw:
+db 40
+CodeStage.AntiCheat.Detectors.TimeCheatingDetector.xux:
+db 40
+CodeStage.AntiCheat.Detectors.WallHackDetector.Update:
+db 40
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>13</ID>
+              <Description>"God Mode"</Description>
+              <Options moHideChildren="1"/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{  Game Executable   : TaskBarHero.exe
+   Script Date       : 2026-06-06
+   Author            : Jonxpin
+}
+ 
+[ENABLE]
+ 
+aobscanmodule(godmode,GameAssembly.dll,29 7C 24 ?? F3 0F 58 73)
+alloc(newmem,$1000,godmode)
+alloc(maxHp,4)
+alloc(godmodeo,$5)
+label(code)
+label(return)
+ 
+maxHp:
+  dd (float)50.0
+ 
+godmodeo:
+  readmem(godmode+28,5)
+newmem:
+  movss xmm0, [rbx+4C]
+  ucomiss xmm0, [maxHp]
+  jne code
+  movss xmm6, [rbx+4C]
+code:
+  reassemble(godmode+28)
+  jmp return
+  align 10 cc
+ 
+godmode+28:
+  jmp newmem
+return:
+registersymbol(godmode godmodeo maxHp)
+ 
+[DISABLE]
+ 
+godmode+28:
+  readmem(godmodeo, 5)
+ 
+unregistersymbol(godmode godmodeo maxHp)
+dealloc(newmem)
+dealloc(godmodeo)
+dealloc(maxHp)
+</AssemblerScript>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>14</ID>
+                  <Description>"Value = Max HP"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>maxHp</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>38</ID>
+              <Description>"Exp"</Description>
+              <Options moHideChildren="1"/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{  Game Executable   : TaskBarHero.exe
+   Script Date       : 2026-06-07
+   Author            : Jonxpin
+}
+ 
+[ENABLE]
+ 
+aobscanregion(exp,ug.jiu,ug.jiu+500,F3 0F 58 ?? ?? 33 ?? ?? 8D ?? 24 ?? 0F 28 ?? E8 ?? ?? ?? ?? 8B ?? 10 0F 10)
+alloc(newmem,$1000,exp)
+alloc(expo, $7)
+label(code)
+label(return)
+label(xpmult)
+registersymbol(xpmult)
+ 
+expo:
+  readmem(exp, 7)
+newmem:
+  mulss xmm0,[xpmult]
+code:
+  reassemble(exp)
+  reassemble(exp+4)
+  jmp return
+  align 10 cc
+  xpmult:
+  dd (float)1
+ 
+exp:
+  jmp newmem
+  nop 2
+return:
+registersymbol(exp expo)
+ 
+[DISABLE]
+ 
+exp:
+  readmem(expo, 7)
+ 
+unregistersymbol(exp expo xpmult)
+dealloc(newmem)
+dealloc(expo)
+</AssemblerScript>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>37</ID>
+                  <Description>"Multiply"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>xpmult</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>6</ID>
+              <Description>"Money"</Description>
+              <Options moHideChildren="1"/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{  Game Executable   : TaskBarHero.exe
+   Script Date       : 2026-06-06
+   Author            : Jonxpin
+}
+ 
+[ENABLE]
+ 
+aobscanmodule(money,GameAssembly.dll,45 33 C0 48 8D 4C 24 ?? 48 8D 14 30)
+alloc(newmem,$1000,money)
+alloc(moneyo, $8)
+alloc(mymoney,8)
+label(code)
+label(return)
+ 
+moneyo:
+  readmem(money, 8)
+newmem:
+  mov rax, [mymoney]
+code:
+  reassemble(money)
+  reassemble(money+3)
+  jmp return
+  align 10 cc
+  mymoney:
+  dq #10000
+ 
+money:
+  jmp newmem
+  nop 3
+return:
+registersymbol(money moneyo mymoney)
+ 
+[DISABLE]
+ 
+money:
+  readmem(moneyo, 8)
+ 
+unregistersymbol(money moneyo mymoney)
+dealloc(newmem)
+dealloc(moneyo mymoney)
+</AssemblerScript>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>7</ID>
+                  <Description>"Change"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>4 Bytes</VariableType>
+                  <Address>mymoney</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>39</ID>
+              <Description>"Inf Skill Points"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{  Game Executable   : TaskBarHero.exe
+   Script Date       : 2026-06-07
+   Author            : Jonxpin
+}
+ 
+[ENABLE]
+ 
+aobscanregion(skillpts,ug.jiz,ug.jiz+500,?? ?? 48 8D 4D F0 8B D0 45 33 C0 E8 ?? ?? ?? ?? 33 D2)
+alloc(newmem,$1000,skillpts)
+alloc(skillptso, $6)
+label(code)
+label(return)
+ 
+skillptso:
+  readmem(skillpts, 6)
+newmem:
+code:
+  reassemble(skillpts+2)
+  jmp return
+ 
+skillpts:
+  jmp newmem
+  nop 1
+return:
+registersymbol(skillpts skillptso)
+ 
+[DISABLE]
+ 
+skillpts:
+  readmem(skillptso, 6)
+ 
+unregistersymbol(skillpts skillptso)
+dealloc(newmem)
+dealloc(skillptso)
+</AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>36</ID>
+              <Description>"Stats"</Description>
+              <Options moHideChildren="1"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>31</ID>
+                  <Description>"Damage"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>Pstat</Address>
+                  <Offsets>
+                    <Offset>3C</Offset>
+                    <Offset>18</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>40</Offset>
+                    <Offset>B8</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>32</ID>
+                  <Description>"Crit Chance"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>Pstat</Address>
+                  <Offsets>
+                    <Offset>5C</Offset>
+                    <Offset>18</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>40</Offset>
+                    <Offset>B8</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>47</ID>
+                  <Description>"Crit Damage"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>Pstat</Address>
+                  <Offsets>
+                    <Offset>6C</Offset>
+                    <Offset>18</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>40</Offset>
+                    <Offset>B8</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>46</ID>
+                  <Description>"Attack Speed"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>Pstat</Address>
+                  <Offsets>
+                    <Offset>4C</Offset>
+                    <Offset>18</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>40</Offset>
+                    <Offset>B8</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>48</ID>
+                  <Description>"Cast Speed"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>Pstat</Address>
+                  <Offsets>
+                    <Offset>AC</Offset>
+                    <Offset>18</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>40</Offset>
+                    <Offset>B8</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>49</ID>
+                  <Description>"CD Reduction"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>Pstat</Address>
+                  <Offsets>
+                    <Offset>CC</Offset>
+                    <Offset>18</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>40</Offset>
+                    <Offset>B8</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>35</ID>
+                  <Description>"Health"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>Pstat</Address>
+                  <Offsets>
+                    <Offset>7C</Offset>
+                    <Offset>18</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>40</Offset>
+                    <Offset>B8</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>34</ID>
+                  <Description>"Armor"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>Pstat</Address>
+                  <Offsets>
+                    <Offset>8C</Offset>
+                    <Offset>18</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>40</Offset>
+                    <Offset>B8</Offset>
+                  </Offsets>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>33</ID>
+                  <Description>"Mov Speed"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>Pstat</Address>
+                  <Offsets>
+                    <Offset>9C</Offset>
+                    <Offset>18</Offset>
+                    <Offset>20</Offset>
+                    <Offset>10</Offset>
+                    <Offset>40</Offset>
+                    <Offset>B8</Offset>
+                  </Offsets>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>1337094845</ID>
+              <Description>"Speedhack"</Description>
+              <Options moHideChildren="1"/>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{  Game Executable   : TaskBarHero.exe
+   Script Date       : 2026-06-06
+   Author            : Jonxpin
+}
+ 
+[ENABLE]
+ 
+alloc(speedMultiplier, 4)
+registersymbol(speedMultiplier)
+ 
+speedMultiplier:
+  dd 40000000
+ 
+{$lua}
+if syntaxcheck then return end
+speedhack_setSpeed(2.0)
+{$asm}
+ 
+[DISABLE]
+ 
+{$lua}
+if syntaxcheck then return end
+speedhack_setSpeed(1.0)
+{$asm}
+ 
+unregistersymbol(speedMultiplier)
+dealloc(speedMultiplier)
+</AssemblerScript>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337094846</ID>
+                  <Description>"set value"</Description>
+                  <ShowAsSigned>0</ShowAsSigned>
+                  <VariableType>Float</VariableType>
+                  <Address>speedMultiplier</Address>
+                </CheatEntry>
+              </CheatEntries>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>50</ID>
+              <Description>"Cube Xp"</Description>
+              <VariableType>Auto Assembler Script</VariableType>
+              <AssemblerScript>{  Game Executable   : TaskBarHero.exe
+   Script Date       : 2026-06-07
+   Author            : Jonxpin
+   Credit            : KusursuzHacker
+}
+ 
+[ENABLE]
+TaskbarHero.StatusSystem.AccountStatus.jza:
+db 83 FA 0B 74 06 B8 E8 03 00 00 C3 B8 00 CA 9A 3B C3
+ 
+[DISABLE]
+TaskbarHero.StatusSystem.AccountStatus.jza:
+db 48 89 5C 24 08 57 48 83 EC 40 80 3D E9 F0 19 05 00
+ 
+ 
+</AssemblerScript>
+            </CheatEntry>
+          </CheatEntries>
+        </CheatEntry>
+      </CheatEntries>
+    </CheatEntry>
+  </CheatEntries>
+  <UserdefinedSymbols/>
+</CheatTable>
