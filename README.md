@@ -13,7 +13,7 @@ This repository is optimized to include only the essential binaries required to 
     * 🔗 `TBHBarforge.dll` — Helper dynamic-link library for system speedhack and process hooking.
 
 ---
-## 🆕 Cheat Table V1.00.11 by jonxpin (Table updated. All scripts tested and working except Cube Xp.)
+## 🆕 Cheat Table V1.00.11 by jonxpin (jonxpin added new features UPDATED)
 ---
 ## 🆕 Version 1.4.0 Change Log (Denoiser V4 Integration) OUTDATED
 

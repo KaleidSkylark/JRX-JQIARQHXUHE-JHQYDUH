@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<CheatTable CheatEngineTableVersion="46">
+<CheatTable CheatEngineTableVersion="52">
   <CheatEntries>
     <CheatEntry>
       <ID>1</ID>
@@ -387,149 +387,6 @@ dealloc(skillptso)
 </AssemblerScript>
             </CheatEntry>
             <CheatEntry>
-              <ID>36</ID>
-              <Description>"Stats"</Description>
-              <Options moHideChildren="1"/>
-              <GroupHeader>1</GroupHeader>
-              <CheatEntries>
-                <CheatEntry>
-                  <ID>31</ID>
-                  <Description>"Damage"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>Float</VariableType>
-                  <Address>Pstat</Address>
-                  <Offsets>
-                    <Offset>3C</Offset>
-                    <Offset>18</Offset>
-                    <Offset>20</Offset>
-                    <Offset>10</Offset>
-                    <Offset>40</Offset>
-                    <Offset>B8</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>32</ID>
-                  <Description>"Crit Chance"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>Float</VariableType>
-                  <Address>Pstat</Address>
-                  <Offsets>
-                    <Offset>5C</Offset>
-                    <Offset>18</Offset>
-                    <Offset>20</Offset>
-                    <Offset>10</Offset>
-                    <Offset>40</Offset>
-                    <Offset>B8</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>47</ID>
-                  <Description>"Crit Damage"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>Float</VariableType>
-                  <Address>Pstat</Address>
-                  <Offsets>
-                    <Offset>6C</Offset>
-                    <Offset>18</Offset>
-                    <Offset>20</Offset>
-                    <Offset>10</Offset>
-                    <Offset>40</Offset>
-                    <Offset>B8</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>46</ID>
-                  <Description>"Attack Speed"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>Float</VariableType>
-                  <Address>Pstat</Address>
-                  <Offsets>
-                    <Offset>4C</Offset>
-                    <Offset>18</Offset>
-                    <Offset>20</Offset>
-                    <Offset>10</Offset>
-                    <Offset>40</Offset>
-                    <Offset>B8</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>48</ID>
-                  <Description>"Cast Speed"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>Float</VariableType>
-                  <Address>Pstat</Address>
-                  <Offsets>
-                    <Offset>AC</Offset>
-                    <Offset>18</Offset>
-                    <Offset>20</Offset>
-                    <Offset>10</Offset>
-                    <Offset>40</Offset>
-                    <Offset>B8</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>49</ID>
-                  <Description>"CD Reduction"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>Float</VariableType>
-                  <Address>Pstat</Address>
-                  <Offsets>
-                    <Offset>CC</Offset>
-                    <Offset>18</Offset>
-                    <Offset>20</Offset>
-                    <Offset>10</Offset>
-                    <Offset>40</Offset>
-                    <Offset>B8</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>35</ID>
-                  <Description>"Health"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>Float</VariableType>
-                  <Address>Pstat</Address>
-                  <Offsets>
-                    <Offset>7C</Offset>
-                    <Offset>18</Offset>
-                    <Offset>20</Offset>
-                    <Offset>10</Offset>
-                    <Offset>40</Offset>
-                    <Offset>B8</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>34</ID>
-                  <Description>"Armor"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>Float</VariableType>
-                  <Address>Pstat</Address>
-                  <Offsets>
-                    <Offset>8C</Offset>
-                    <Offset>18</Offset>
-                    <Offset>20</Offset>
-                    <Offset>10</Offset>
-                    <Offset>40</Offset>
-                    <Offset>B8</Offset>
-                  </Offsets>
-                </CheatEntry>
-                <CheatEntry>
-                  <ID>33</ID>
-                  <Description>"Mov Speed"</Description>
-                  <ShowAsSigned>0</ShowAsSigned>
-                  <VariableType>Float</VariableType>
-                  <Address>Pstat</Address>
-                  <Offsets>
-                    <Offset>9C</Offset>
-                    <Offset>18</Offset>
-                    <Offset>20</Offset>
-                    <Offset>10</Offset>
-                    <Offset>40</Offset>
-                    <Offset>B8</Offset>
-                  </Offsets>
-                </CheatEntry>
-              </CheatEntries>
-            </CheatEntry>
-            <CheatEntry>
               <ID>1337094845</ID>
               <Description>"Speedhack"</Description>
               <Options moHideChildren="1"/>
@@ -577,21 +434,433 @@ dealloc(speedMultiplier)
               <Description>"Cube Xp"</Description>
               <VariableType>Auto Assembler Script</VariableType>
               <AssemblerScript>{  Game Executable   : TaskBarHero.exe
-   Script Date       : 2026-06-07
+   Script Date       : 2026-06-08
    Author            : Jonxpin
    Credit            : KusursuzHacker
 }
  
 [ENABLE]
-TaskbarHero.StatusSystem.AccountStatus.jza:
-db 83 FA 0B 74 06 B8 E8 03 00 00 C3 B8 00 CA 9A 3B C3
+alloc(newmem,$1000,TaskbarHero.StatusSystem.AccountStatus.jzb)
+ 
+newmem:
+  db 83 FA 0B 74 06 B8 E8 03 00 00 C3 B8 00 CA 9A 3B C3
+ 
+TaskbarHero.StatusSystem.AccountStatus.jzb:
+  jmp newmem
  
 [DISABLE]
-TaskbarHero.StatusSystem.AccountStatus.jza:
-db 48 89 5C 24 08 57 48 83 EC 40 80 3D E9 F0 19 05 00
+TaskbarHero.StatusSystem.AccountStatus.jzb:
+  db 48 89 5C 24 08
+ 
+dealloc(newmem)
+ 
  
  
 </AssemblerScript>
+            </CheatEntry>
+            <CheatEntry>
+              <ID>36</ID>
+              <Description>"Stats"</Description>
+              <Options moHideChildren="1"/>
+              <GroupHeader>1</GroupHeader>
+              <CheatEntries>
+                <CheatEntry>
+                  <ID>1337094880</ID>
+                  <Description>"Attack"</Description>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>31</ID>
+                      <Description>"Attack Damage"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>3C</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>46</ID>
+                      <Description>"Attack Speed"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>4C</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>32</ID>
+                      <Description>"Critical Chance"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>5C</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>47</ID>
+                      <Description>"Critical Damage"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>6C</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>49</ID>
+                      <Description>"Cooldown Reduction"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>CC</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>48</ID>
+                      <Description>"Cast Speed"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Double</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>338</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>1337094865</ID>
+                      <Description>"Physical Damage"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>1AC</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>1337094879</ID>
+                      <Description>"Fire Damage"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>1BC</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>1337094867</ID>
+                      <Description>"Cold Damage"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>1CC</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>1337094869</ID>
+                      <Description>"Lightning Damage"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>1DC</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>1337094883</ID>
+                      <Description>"Chaos Damage"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>1EC</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>1337094881</ID>
+                  <Description>"Defense"</Description>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>35</ID>
+                      <Description>"Max Hp"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>7C</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>34</ID>
+                      <Description>"Armor"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>8C</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>1337094849</ID>
+                      <Description>"Dodge Chance"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>12C</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>1337094857</ID>
+                      <Description>"Block Chance"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>13C</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>1337094861</ID>
+                      <Description>"All Element Resistance"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>36C</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>1337094855</ID>
+                      <Description>"Hp Regen /Sec"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Double</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>198</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>1337094876</ID>
+                      <Description>"Dmg Absorption"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>2AC</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>1337094863</ID>
+                      <Description>"Dmg Reduction"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>24C</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+                <CheatEntry>
+                  <ID>1337094882</ID>
+                  <Description>"Others"</Description>
+                  <GroupHeader>1</GroupHeader>
+                  <CheatEntries>
+                    <CheatEntry>
+                      <ID>33</ID>
+                      <Description>"Movement Speed"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>9C</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>1337094872</ID>
+                      <Description>"Area of Effect %"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Double</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>A8</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>1337094874</ID>
+                      <Description>"Area of Effect Damage"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Double</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>398</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>1337094859</ID>
+                      <Description>"Add HP/Kill"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>3CC</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>1337094853</ID>
+                      <Description>"Life Leech"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Float</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>17C</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                    <CheatEntry>
+                      <ID>1337094878</ID>
+                      <Description>"Skill Heal"</Description>
+                      <ShowAsSigned>0</ShowAsSigned>
+                      <VariableType>Double</VariableType>
+                      <Address>Pstat</Address>
+                      <Offsets>
+                        <Offset>348</Offset>
+                        <Offset>18</Offset>
+                        <Offset>20</Offset>
+                        <Offset>10</Offset>
+                        <Offset>40</Offset>
+                        <Offset>B8</Offset>
+                      </Offsets>
+                    </CheatEntry>
+                  </CheatEntries>
+                </CheatEntry>
+              </CheatEntries>
             </CheatEntry>
           </CheatEntries>
         </CheatEntry>
