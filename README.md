@@ -1,4 +1,5 @@
-# 🛡️ TBH: TaskBarHero Barforge Trainer
+# 🛡️ TBH: TaskBarHero Barforge Trainer 
+[NO LONGER CONTINUE TO UPDATE, CHECK UNKNOWNCHEATS SOURCE IS THERE. THE DEVS ARE SHIT NO MARKET NOT PLAYING SINCE LAST WEEK AHAHAHA]
 
 A Barforge trainer for **TaskBarHero** with full Multi-Instance Support.
 
